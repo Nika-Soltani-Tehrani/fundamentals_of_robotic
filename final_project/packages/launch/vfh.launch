@@ -1,0 +1,14 @@
+<launch>
+    
+    <node pkg="final_project" type="vfh_node.py" name="vfh_node" output="screen"></node>
+
+
+    <include file="$(find turtlebot3_gazebo)/launch/custom_world.launch">
+      <arg name="x_pos" value="0.0"/>
+      <arg name="y_pos" value="0.0"/>
+      <arg name="z_pos" value="0.0"/>
+    </include> 
+
+    
+   
+</launch>

@@ -1,0 +1,8 @@
+<launch>
+
+    <node pkg="pcd_view" type="lidar.py" name="distance_calculator_node" output="screen"></node>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_stage_4.launch" />
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+
+
+</launch>

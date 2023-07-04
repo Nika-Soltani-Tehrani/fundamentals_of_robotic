@@ -1,0 +1,9 @@
+string label
+---
+bool detected
+float64 x_bounding_box
+float64 y_bounding_box
+float64 width_bounding_box
+float64 height_bounding_box
+float64 image_width 
+float64 image_height

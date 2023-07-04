@@ -1,0 +1,24 @@
+<launch>
+
+    <node pkg="hw3_2" type="pid_controller_node.py" name="pid_controller_node" output="screen">
+        <param name="k_i" value="0.0" />
+        <param name="k_p" value="2.4" />
+        <param name="k_d" value="0.1" />
+        <param name="linear_k_i" value="0.01" />
+        <param name="linear_k_p" value="0.65" />
+        <param name="linear_k_d" value="0.2" />
+        <param name="dt" value="0.005" />
+        <param name="D" value="0.0" />
+    </node>
+
+    
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" value="1.0"/>
+        <arg name="y_pos" value="1.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+    
+
+</launch>

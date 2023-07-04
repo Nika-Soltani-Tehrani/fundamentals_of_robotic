@@ -1,0 +1,15 @@
+<launch>
+
+    <node pkg="hw3_2" type="go_to_next_dest.py" name="go_to_next_dest" output="screen"></node>
+    <node pkg="hw3_2" type="destination_mission.py" name="destination_mission" output="screen"></node>
+    
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+    
+
+</launch>

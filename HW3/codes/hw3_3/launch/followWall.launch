@@ -1,0 +1,17 @@
+<launch>
+
+    <node pkg="hw3_3" type="monitor.py" name="monitor" output="screen"></node>
+
+    <node pkg="hw3_3" type="follow_the_wall.py" name="follow_the_wall" output="screen"></node>
+    
+    <include file="$(find turtlebot3_gazebo)/launch/custom_follow_wall.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+        <arg name="yaw" value="0.0"/>
+    </include>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+    
+
+</launch>

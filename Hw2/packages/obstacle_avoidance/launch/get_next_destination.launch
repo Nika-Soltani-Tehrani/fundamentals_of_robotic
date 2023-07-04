@@ -1,0 +1,19 @@
+<launch>
+
+    <node pkg="get_next_distance" type="control_node.py" name="control_node" output="screen">
+        <param name="linear_speed" type="double" value="0.8"/>
+        <param name="angular_speed" type="double" value="0.2"/>
+        <param name="epsilon" type="double" value="0.001"/>
+    </node>
+
+    <node pkg="get_next_distance" type="mission_node.py" name="misssion_node" output="screen"></node>
+    
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" value="0.0"/>
+        <arg name="y_pos" value="0.0"/>
+        <arg name="z_pos" value="0.0"/>
+    </include>
+    
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch" />
+
+</launch>
